@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>Data Policy | MAKNAA</title>
+<meta name="description" content="Data Policy of Maknaa Group Sdn. Bhd.">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --card:rgba(255,255,255,.03);
+  --cyan:#00f0ff; --blue:#3b82f6; --purple:#8b5cf6;
+  --t1:#f1f5f9; --t2:#94a3b8; --t3:#64748b;
+  --border:rgba(255,255,255,.10);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--t1);
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,
+    "Helvetica Neue","Noto Sans","PingFang SC","Microsoft YaHei",Arial,sans-serif;
+  font-size:16px; line-height:1.75;
+}
+a{color:var(--cyan); text-decoration:none}
+a:hover{text-decoration:underline}
+.hdr{
+  position:sticky; top:0; z-index:10;
+  background:rgba(10,10,15,.85); backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.hdr-in{
+  max-width:60rem; margin:0 auto; padding:.875rem 1.5rem;
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+}
+.brand{display:flex; align-items:center; gap:.5rem; color:var(--t1); font-weight:600}
+.brand img{width:32px; height:32px; border-radius:8px; object-fit:contain}
+.back{
+  color:var(--t2); font-size:.875rem; white-space:nowrap;
+  border:1px solid var(--border); border-radius:9999px; padding:.375rem .875rem;
+}
+.back:hover{color:var(--cyan); border-color:rgba(0,240,255,.3); text-decoration:none}
+main{max-width:60rem; margin:0 auto; padding:2.5rem 1.5rem 4rem}
+h1{
+  font-size:clamp(1.875rem,4vw,2.5rem); line-height:1.2; font-weight:700;
+  margin:0 0 1.25rem; letter-spacing:-.02em;
+  background:linear-gradient(90deg,var(--cyan),var(--blue),var(--purple));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+h2{
+  font-size:1.25rem; font-weight:600; margin:2.25rem 0 .75rem;
+  padding-left:.75rem; border-left:3px solid var(--cyan); line-height:1.4;
+}
+p{margin:0 0 1rem; color:var(--t2)}
+strong{color:var(--t1); font-weight:600}
+p.meta{margin:0; padding:.3rem 0; color:var(--t2); font-size:.9375rem}
+p.meta .meta-k{
+  display:inline-block; min-width:13rem; color:var(--t3);
+  font-size:.8125rem; text-transform:uppercase; letter-spacing:.05em;
+}
+p.meta .meta-v{color:var(--t1)}
+.meta-sep{height:1px; background:var(--border); margin:1.25rem 0 1.75rem}
+ul{margin:0 0 1rem; padding-left:1.375rem; color:var(--t2)}
+ul.sub{margin:.5rem 0}
+li{margin-bottom:.5rem}
+li::marker{color:var(--cyan)}
+.tbl-wrap{overflow-x:auto; margin:0 0 1.25rem; border:1px solid var(--border); border-radius:.75rem}
+table{border-collapse:collapse; width:100%; font-size:.9375rem}
+th,td{padding:.625rem .875rem; text-align:left; border-bottom:1px solid var(--border); color:var(--t2); vertical-align:top}
+th{background:rgba(0,240,255,.06); color:var(--t1); font-weight:600; white-space:nowrap}
+tr:last-child td{border-bottom:none}
+.ftr{
+  border-top:1px solid rgba(255,255,255,.05); background:var(--bg2);
+  padding:1.5rem; text-align:center; color:var(--t3); font-size:.8125rem;
+}
+.ftr a{color:var(--t2)}
+.nav-other{
+  display:flex; flex-wrap:wrap; gap:.5rem; margin-top:2.5rem;
+  padding-top:1.5rem; border-top:1px solid var(--border);
+}
+.nav-other a{
+  font-size:.875rem; color:var(--t2); border:1px solid var(--border);
+  border-radius:9999px; padding:.375rem .875rem;
+}
+.nav-other a:hover{color:var(--cyan); border-color:rgba(0,240,255,.3); text-decoration:none}
+.nav-other a[aria-current="page"]{color:var(--bg); background:var(--cyan); border-color:var(--cyan); font-weight:600}
+@media (max-width:640px){
+  .hdr-in,main{padding-left:1rem; padding-right:1rem}
+  p.meta .meta-k{display:block; min-width:0; margin-bottom:.125rem}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+@media print{
+  body{background:#fff; color:#000}
+  .hdr,.ftr,.nav-other{display:none}
+  p,li,td{color:#000}
+  h1{color:#000; background:none; -webkit-background-clip:initial}
+  h2{border-left-color:#000}
+}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="brand" href="/">
+      <img src="/maknaa/header-logo-32.png"
+           srcset="/maknaa/header-logo-32.png 32w, /maknaa/header-logo-48.png 48w, /maknaa/header-logo-64.png 64w"
+           sizes="32px" alt="MAKNAA" width="32" height="32">
+      <span>MAKNAA</span>
+    </a>
+    <a class="back" href="/">&larr; Back to home</a>
+  </div>
+</header>
+<main>
+<h1><strong>Data Policy</strong></h1>
+<p class="meta"><span class="meta-k">Operator</span><span class="meta-v">Maknaa Group Sdn. Bhd.</span></p>
+<p class="meta"><span class="meta-k">Company registration no.</span><span class="meta-v">202501037327 (1638737-V)</span></p>
+<p class="meta"><span class="meta-k">Place of incorporation</span><span class="meta-v">Malaysia</span></p>
+<p class="meta"><span class="meta-k">Contact</span><span class="meta-v">azmel@maknaagroup.com</span></p>
+<p class="meta"><span class="meta-k">Last updated</span><span class="meta-v">6 November 2026</span></p>
+<div class="meta-sep"></div>
+<h2><strong>1.  Scope</strong></h2>
+<p>This Policy applies to the inference services (the “Service”) provided by Maknaa Group Sdn. Bhd. (“we”, “us”). It covers all requests routed to us through the OpenRouter platform as well as requests made directly to our API.</p>
+<p>This Policy does not apply to our website or status page, which are governed by our Privacy Policy.</p>
+<h2><strong>2.  Summary of Commitments</strong></h2>
+<div class="tbl-wrap"><table>
+<tr>
+<th><strong>Item</strong></th>
+<th><strong>Commitment</strong></th>
+</tr>
+<tr>
+<td>Prompts and outputs</td>
+<td>Not logged, not persisted</td>
+</tr>
+<tr>
+<td>Content retention</td>
+<td>Zero — released from memory on request completion</td>
+</tr>
+<tr>
+<td>Used for training</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Human review of content</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Metering metadata</td>
+<td>Retained — scope and periods in Section 4</td>
+</tr>
+<tr>
+<td>Processing location</td>
+<td>Thailand data centre (overseas processing, see Section 9)</td>
+</tr>
+<tr>
+<td>Cross-border basis</td>
+<td>PDPA s.129(2)(b) with a transfer impact assessment</td>
+</tr>
+</table></div>
+<h2><strong>3.  What We Do Not Collect</strong></h2>
+<p>The following content is never logged, written to disk, or retained in any recoverable form:</p>
+<ul>
+<li>Full prompt text, including system messages, user messages, tool-call arguments and tool results;</li>
+<li>Full model output, including streamed chunks;</li>
+<li>Images, audio, video, files uploaded with a request, and their parsed results;</li>
+<li>Raw copies of request and response payloads, or payload fragments captured in error contexts.</li>
+</ul>
+<p>Such content exists only in memory during a single request and is released on completion (including stream termination, timeout or abnormal interruption), no later than 60 seconds. Crash dumps are disabled, and request-body collection in our monitoring and tracing tools is turned off.</p>
+<h2><strong>4.  Data We Retain</strong></h2>
+<div class="tbl-wrap"><table>
+<tr>
+<th><strong>Category</strong></th>
+<th><strong>Fields</strong></th>
+<th><strong>Retention</strong></th>
+<th><strong>Purpose</strong></th>
+</tr>
+<tr>
+<td>Billing &amp; usage</td>
+<td>Request ID, timestamp, model ID, input/output token counts, request status</td>
+<td>13 months</td>
+<td>Billing, reconciliation, disputes</td>
+</tr>
+<tr>
+<td>Technical logs</td>
+<td>Request ID, endpoint, TTFT, total latency, HTTP status, ingress region, upstream node</td>
+<td>90 days</td>
+<td>Uptime monitoring, incident diagnosis</td>
+</tr>
+<tr>
+<td>Abuse prevention</td>
+<td>Key ID, request rate, concurrency, IP address (full for 30 days, then truncated and hashed)</td>
+<td>90 days</td>
+<td>Rate limiting, abuse and attack detection</td>
+</tr>
+<tr>
+<td>Aggregates</td>
+<td>Metrics identifying no individual, directly or indirectly</td>
+<td>Not applicable (anonymised)</td>
+<td>Capacity planning, service reporting</td>
+</tr>
+</table></div>
+<p>None of the above contains prompt or output content. Data is deleted or irreversibly anonymised upon expiry, consistent with the Retention Principle in Section 10 of the PDPA.</p>
+<h2><strong>5.  Purposes of Processing</strong></h2>
+<ul>
+<li>Billing callers or platforms based on actual usage;</li>
+<li>Monitoring availability, diagnosing incidents, optimising performance;</li>
+<li>Detecting and blocking abuse, attack traffic and anomalous usage;</li>
+<li>Meeting legal, tax and audit obligations.</li>
+</ul>
+<h2><strong>6.  No Training Use</strong></h2>
+<p>We do not use prompts, outputs or user data transmitted through the Service for training, fine-tuning, distillation, evaluation or improvement of any model, nor provide it to any third party for such purposes. All models are deployed with fixed weights; there is no online learning.</p>
+<h2><strong>7.  Human Access</strong></h2>
+<p>No personnel are assigned to review request content. Because we retain no content, there is nothing to review. Operator activity is limited to the metadata in Section 4, restricted to incident handling and capacity management, logged and subject to authorisation.</p>
+<p>We do not hold prompt or output content, and no copy of such content exists that could be provided to any authority, platform or third party. Where a request for such content is received, our response is that the content does not exist.</p>
+<p>The metadata we do hold (see Section 4) may be provided under legal process: a court order in Malaysia or Thailand, a statutory production requirement by a competent authority, or other compulsory process under applicable law. For requests that are manifestly overbroad, lack legal basis or are procedurally defective, we will seek to narrow the scope or object, to the extent permitted by law.</p>
+<p>Unless disclosure is expressly prohibited by law or ordered otherwise by a court, we will notify affected callers before providing data, stating the scope of the request and its legal basis.</p>
+<h2><strong>8.  Sub-processors</strong></h2>
+<p>We currently use the following sub-processors; none has access to prompt or output content:</p>
+<div class="tbl-wrap"><table>
+<tr>
+<th><strong>Sub-processor</strong></th>
+<th><strong>Role</strong></th>
+<th><strong>Data involved</strong></th>
+<th><strong>Location</strong></th>
+</tr>
+<tr>
+<td>DATAZONE CO.LTD.</td>
+<td>Infrastructure and inference capacity</td>
+<td>Metadata (network layer)</td>
+<td>Thailand</td>
+</tr>
+</table></div>
+<p>Under Section 9 of the PDPA, processors are directly subject to the Security Principle. We enter into written agreements requiring protection no less stringent than this Policy. Changes to this list are published here with a record of amendments.</p>
+<p>Enterprise customers may enter into a separate data processing agreement (DPA) with us covering the scope and duration of processing, security measures, notice periods for changes to sub-processors, audit rights, and deletion or return of data. Where a DPA conflicts with this Policy, the DPA prevails.</p>
+<h2><strong>9.  Storage and Cross-border Transfer</strong></h2>
+<p>We are established as a data controller in Malaysia. All inference capacity is located in located in SuperNap, Soi Hup Bon, Khao Khan Song, Si Racha, Chon Buri, 20110, Thailand, meaning personal data is processed outside Malaysia.</p>
+<p>Under Section 129(2) of the PDPA, personal data may be transferred outside Malaysia where the destination has a law substantially similar to the Act, or ensures a level of protection at least equivalent to it. The controller makes this assessment itself, following the Commissioner’s Guidelines for Cross Border Personal Data Transfer (No. 3/2025, issued 29 April 2025).</p>
+<p>Our approach:</p>
+<ul>
+<li>A transfer impact assessment (TIA) has been completed for Thailand, concluding that protection is not lower than the PDPA requires, on the basis of Section 129(2)(b);</li>
+<li>The assessment is valid for three years and is repeated on expiry or on material change of law in the destination;</li>
+<li>Supplementary measures apply: encryption in transit, access control, data minimisation and no content retention;</li>
+<li>Written agreements with overseas processors set out their security obligations under Section 9 of the PDPA;</li>
+<li>For data subjects in the European Union, any transfer from the EU to Malaysia or Thailand relies on the European Commission’s Standard Contractual Clauses (Decision 2021/914) with a transfer impact assessment.</li>
+</ul>
+<h2><strong>10.  Security Measures</strong></h2>
+<div class="tbl-wrap"><table>
+<tr>
+<th><strong>Layer</strong></th>
+<th><strong>Measure</strong></th>
+</tr>
+<tr>
+<td>Transit</td>
+<td>End-to-end TLS 1.2+, weak ciphers disabled</td>
+</tr>
+<tr>
+<td>At rest</td>
+<td>Metadata encrypted at rest; keys managed separately and rotated</td>
+</tr>
+<tr>
+<td>Access control</td>
+<td>Role-based least privilege, MFA, immediate revocation on exit</td>
+</tr>
+<tr>
+<td>Isolation</td>
+<td>Tenant requests isolated in memory; buffers never reused across requests</td>
+</tr>
+<tr>
+<td>Logging</td>
+<td>Metadata only; all access to metadata logged</td>
+</tr>
+<tr>
+<td>Exercises</td>
+<td>At least annual recovery and incident-response exercises</td>
+</tr>
+</table></div>
+<h2><strong>11.  Abuse Prevention</strong></h2>
+<p>Because we retain no content, abuse prevention relies on metadata and behavioural signals: request rate, concurrency, per-key usage, IP profiles, request-length distribution and error rates. We do not carry out routine content review or filtering, but reserve the right to apply rate limits, suspend keys or terminate the Service where we receive a credible report, a notice from the platform, or a legal requirement to act.</p>
+<p>On detecting anomalies we apply rate limits, reduce quotas or suspend keys, and notify the platform and caller where necessary.</p>
+<h2><strong>12.  Data Protection Officer</strong></h2>
+<p>Pursuant to Section 12A of the PDPA and the Commissioner’s implementation criteria, we have appointed a Data Protection Officer and notified the Commissioner of the appointment. Contact:</p>
+<ul>
+<li>Name / role: NUR AZMEL BIN AWALUDIN, Data Protection Officer</li>
+<li>Email: azmel@maknaagroup.com</li>
+<li>Postal address: Maknaa Group, Level 33A, MOF Inc. Tower, No. 9, Jalan Persiaran KLCC, 50088 Kuala Lumpur</li>
+</ul>
+<nav class="nav-other" aria-label="Other policies"><a href="/legal/Data-Policy.html" aria-current="page">Data Policy</a>
+<a href="/legal/Privacy-Policy.html">Privacy Policy</a>
+<a href="/legal/Terms-of-Service.html">Terms of Service</a></nav>
+</main>
+<footer class="ftr">
+  <p>&copy; 2026 MAKNAA GROUP SDN. BHD. All Rights Reserved.</p>
+  <p>Powered by <a href="https://github.com/QuantumNous/new-api" target="_blank" rel="noopener noreferrer">New API</a>. All rights reserved. Designed and developed by the project contributors.</p>
+</footer>
+</body>
+</html>

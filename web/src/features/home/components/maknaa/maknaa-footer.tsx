@@ -82,13 +82,32 @@ function FooterLegalLinks() {
   )
 }
 
+/**
+ * Statutory policy pages generated from the Maknaa Group source documents.
+ * They are plain static files under `web/public/legal/`, served by the Go
+ * backend directly, so they are linked with `<a>` rather than a router `Link`.
+ */
+const LEGAL_PAGES = [
+  { key: 'data-policy', label: 'Data Policy', href: '/legal/Data-Policy.html' },
+  {
+    key: 'privacy-policy',
+    label: 'Privacy Policy',
+    href: '/legal/Privacy-Policy.html',
+  },
+  {
+    key: 'terms-of-service',
+    label: 'Terms of Service',
+    href: '/legal/Terms-of-Service.html',
+  },
+] as const
+
 export function MaknaaFooter() {
   const { t } = useTranslation()
 
   return (
     <footer className='bg-mk-bg-secondary border-t border-white/5'>
       <div className='mx-auto max-w-7xl px-6 py-16 md:px-8'>
-        <div className='grid grid-cols-1 gap-12 md:grid-cols-4'>
+        <div className='grid grid-cols-1 gap-12 md:grid-cols-5'>
           {/* Brand */}
           <div className='md:col-span-2'>
             <div className='mb-4 flex items-center gap-2'>
@@ -137,6 +156,25 @@ export function MaknaaFooter() {
               {MAKNAA_FOOTER.serviceNames.map((name) => (
                 <li key={name} className='text-mk-text-secondary text-sm'>
                   {name}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h4 className='text-mk-text-primary mb-4 text-sm font-semibold'>
+              {t('Legal')}
+            </h4>
+            <ul className='space-y-3'>
+              {LEGAL_PAGES.map((page) => (
+                <li key={page.key}>
+                  <a
+                    href={page.href}
+                    className='text-mk-text-secondary hover:text-mk-cyan text-sm transition-colors'
+                  >
+                    {t(page.label)}
+                  </a>
                 </li>
               ))}
             </ul>

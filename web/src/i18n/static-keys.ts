@@ -922,4 +922,9 @@ export const STATIC_I18N_KEYS = [
   'Please describe your requirements',
   'Network error. Please check your connection and try again.',
   'Failed to send. Please try again later.',
+  // MAKNAA footer legal links rendered via t(page.label) from LEGAL_PAGES.
+  // 'Privacy Policy' is omitted: it also appears as a t('...') literal in
+  // FooterLegalLinks, so the scanner already picks it up.
+  'Data Policy',
+  'Terms of Service',
 ] as const
