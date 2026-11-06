@@ -32,16 +32,15 @@ services:
       - ./data:/data
     environment:
       - TZ=Asia/Shanghai
-      # --- Database: SQLite by default (file persisted in ./data) ---------------
-      # The built-in DSN already sets busy_timeout / WAL / _txlock=immediate.
-      - SQLITE_PATH=/data/new-api.db?_pragma=busy_timeout(30000)&_pragma=journal_mode(WAL)&_txlock=immediate
-      # To use MySQL or PostgreSQL instead, comment SQLITE_PATH above and set one:
-      # - SQL_DSN=root:YourDbPass@tcp(mysql:3306)/newapi?parseTime=true
-      # - SQL_DSN=postgres://postgres:YourDbPass@postgres:5432/newapi
+      # --- Database: PostgreSQL, identical to the official docker-compose.yml --
+      # The credentials below are the official defaults, NOT usable secrets.
+      # Change them before going public (DEPLOYMENT.md §6).
+      - SQL_DSN=postgresql://root:123456@postgres:5432/new-api
       # Optional separate log database (or ClickHouse):
-      # - LOG_SQL_DSN=postgres://postgres:YourDbPass@postgres:5432/newapi_log
-      # --- Redis (rate limit / cache; recommended, self-contained below) -------
-      - REDIS_CONN_STRING=redis://:ChangeMe_RedisPass@redis:6379
+      # - LOG_SQL_DSN=postgresql://root:123456@postgres:5432/new-api-log
+      # To use SQLite or MySQL instead, see DEPLOYMENT.md §9.
+      # --- Redis (rate limit / cache), identical to the official compose -------
+      - REDIS_CONN_STRING=redis://:123456@redis:6379
       # --- Identity / behaviour -------------------------------------------------
       - NODE_NAME=new-api-node-1
       - ERROR_LOG_ENABLED=true
@@ -60,6 +59,7 @@ services:
       # building, not here. See DEPLOYMENT.md §5.
     depends_on:
       - redis
+      - postgres
     networks:
       - new-api-network
     healthcheck:
@@ -69,15 +69,33 @@ services:
       retries: 3
 
   redis:
-    image: redis:7-alpine
-    container_name: new-api-redis
+    image: redis:latest
+    container_name: redis
     restart: always
     # Keep the password identical to REDIS_CONN_STRING above.
-    command: ["redis-server", "--requirepass", "ChangeMe_RedisPass"]
+    command: ["redis-server", "--requirepass", "123456"]
     networks:
       - new-api-network
     # Single-node without Redis: delete this service, the depends_on entry and
     # the REDIS_CONN_STRING line above.
+
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: new-api
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    networks:
+      - new-api-network
+#    ports:
+#      - "5432:5432"  # Uncomment if you need to access PostgreSQL from outside Docker
+
+volumes:
+  pg_data:
 
 networks:
   new-api-network:
