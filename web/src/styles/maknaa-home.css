@@ -1,0 +1,173 @@
+/*
+Copyright (C) 2023-2026 QuantumNous
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+For commercial licensing, please contact support@quantumnous.com
+*/
+/* MAKNAA landing page.
+ *
+ * The design has a single dark appearance with no light variant, so its palette
+ * is `mk-` prefixed and independent from the console theme: the page must not
+ * follow theme presets. `.mk-force-dark` re-seeds the shadcn tokens inside the
+ * landing subtree so shared components (Button, Collapsible, DropdownMenu,
+ * inputs) keep rendering correctly on the dark canvas under any console theme.
+ *
+ * Scroll reveal reuses the shared `AnimateInView` component and its
+ * `landing-animate-*` keyframes in index.css rather than defining a parallel
+ * animation here. */
+@theme {
+  --color-mk-bg-primary: #0a0a0f;
+  --color-mk-bg-secondary: #12121a;
+  --color-mk-bg-card: rgb(255 255 255 / 3%);
+  --color-mk-bg-card-hover: rgb(255 255 255 / 6%);
+
+  --color-mk-cyan: #00f0ff;
+  --color-mk-blue: #3b82f6;
+  --color-mk-purple: #8b5cf6;
+  --color-mk-emerald: #10b981;
+  --color-mk-danger: #f87171;
+
+  --color-mk-text-primary: #f1f5f9;
+  --color-mk-text-secondary: #94a3b8;
+  --color-mk-text-muted: #64748b;
+}
+
+.mk-force-dark {
+  color-scheme: dark;
+
+  --background: #0a0a0f;
+  --foreground: #f1f5f9;
+  --card: #12121a;
+  --card-foreground: #f1f5f9;
+  --popover: #12121a;
+  --popover-foreground: #f1f5f9;
+  --primary: #00f0ff;
+  --primary-foreground: #0a0a0f;
+  --secondary: rgb(255 255 255 / 6%);
+  --secondary-foreground: #f1f5f9;
+  --muted: rgb(255 255 255 / 8%);
+  --muted-foreground: #94a3b8;
+  --accent: rgb(0 240 255 / 14%);
+  --accent-foreground: #f1f5f9;
+  --destructive: #f87171;
+  --destructive-foreground: #0a0a0f;
+  --border: rgb(255 255 255 / 10%);
+  --input: rgb(255 255 255 / 17%);
+  --ring: #00f0ff;
+}
+
+/* Hero gradient sweep */
+@keyframes mk-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Rising hero particles */
+@keyframes mk-float-up {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Hero scroll hint */
+@keyframes mk-bounce-y {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
+}
+
+.mk-animate-gradient-shift {
+  animation: mk-gradient-shift 8s ease infinite;
+}
+
+.mk-animate-float-up {
+  animation: mk-float-up 4s ease-in-out infinite;
+}
+
+.mk-animate-bounce-y {
+  animation: mk-bounce-y 2s ease-in-out infinite;
+}
+
+/* Section anchor offset so the fixed landing header never covers a heading.
+ * Applied to the landing subtree only: a global `scroll-padding-top` would
+ * change anchor behaviour on every other page. */
+.mk-home {
+  scroll-padding-top: 80px;
+}
+
+.mk-home [id] {
+  scroll-margin-top: 80px;
+}
+
+/* Card hover lift, matching the source design's two intensities.
+ * `-sm` is declared after the base rule so it wins on the GPU cards, which
+ * carry both classes exactly as the source markup does. */
+.mk-card-hover {
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.mk-card-hover:hover {
+  transform: translateY(-4px);
+}
+
+.mk-card-hover-sm:hover {
+  transform: translateY(-2px);
+}
+
+.mk-gpu-card:active {
+  transform: scale(0.95);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mk-home {
+    scroll-behavior: auto;
+  }
+
+  .mk-animate-gradient-shift,
+  .mk-animate-float-up,
+  .mk-animate-bounce-y {
+    animation: none !important;
+  }
+
+  .mk-card-hover {
+    transition: none !important;
+  }
+
+  .mk-card-hover:hover,
+  .mk-card-hover-sm:hover,
+  .mk-gpu-card:active {
+    transform: none;
+  }
+}

@@ -1,0 +1,84 @@
+# new-api (MAKNAA home) — source-build deployment.
+#
+# Unlike the repo's docker-compose.yml (which pulls the prebuilt public image
+# calciumion/new-api and therefore does NOT contain the MAKNAA landing page),
+# this file builds the image from THIS source tree via the official multi-stage
+# Dockerfile, so the custom frontend is compiled in.
+#
+#   Build & start : docker-compose -f docker-compose.build.yml up -d --build
+#   Logs          : docker-compose -f docker-compose.build.yml logs -f new-api
+#   Stop          : docker-compose -f docker-compose.build.yml down      (keeps ./data)
+#
+# The build needs outbound network on the server: Docker Hub (base images),
+# the npm registry (bun install) and the Go module proxy (go mod download).
+# See DEPLOYMENT.md for offline / China-mirror fallbacks.
+
+# `version` is kept for docker-compose v1 compatibility (v1 needs it to accept
+# the `healthcheck` field); Compose v2 only prints an "obsolete" warning.
+version: '3.8'
+
+services:
+  new-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: maknaa-new-api:latest
+    container_name: new-api
+    restart: always
+    command: --log-dir /data/logs
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/data
+    environment:
+      - TZ=Asia/Shanghai
+      # --- Database: SQLite by default (file persisted in ./data) ---------------
+      # The built-in DSN already sets busy_timeout / WAL / _txlock=immediate.
+      - SQLITE_PATH=/data/new-api.db?_pragma=busy_timeout(30000)&_pragma=journal_mode(WAL)&_txlock=immediate
+      # To use MySQL or PostgreSQL instead, comment SQLITE_PATH above and set one:
+      # - SQL_DSN=root:YourDbPass@tcp(mysql:3306)/newapi?parseTime=true
+      # - SQL_DSN=postgres://postgres:YourDbPass@postgres:5432/newapi
+      # Optional separate log database (or ClickHouse):
+      # - LOG_SQL_DSN=postgres://postgres:YourDbPass@postgres:5432/newapi_log
+      # --- Redis (rate limit / cache; recommended, self-contained below) -------
+      - REDIS_CONN_STRING=redis://:ChangeMe_RedisPass@redis:6379
+      # --- Identity / behaviour -------------------------------------------------
+      - NODE_NAME=new-api-node-1
+      - ERROR_LOG_ENABLED=true
+      - BATCH_UPDATE_ENABLED=true
+      # SECURITY — MUST change before going public. A stable secret keeps login
+      # sessions valid across restarts; leaving it unset regenerates one per boot.
+      - SESSION_SECRET=CHANGE_ME_to_a_long_random_string
+      # Behind HTTPS, enable the secure cookie + strict Origin guard and list the
+      # exact public origin(s). Without these, refresh/logout CSRF guard is off.
+      # - SESSION_COOKIE_SECURE=true
+      # - SESSION_COOKIE_TRUSTED_URL=https://your-domain.example
+      # - DEFAULT_LANGUAGE=zh-CN
+      #
+      # NOTE: the MAKNAA inquiry-form backend (VITE_MAKNAA_INQUIRY_ENDPOINT) is a
+      # BUILD-TIME variable baked into the frontend bundle — it must be set before
+      # building, not here. See DEPLOYMENT.md §5.
+    depends_on:
+      - redis
+    networks:
+      - new-api-network
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://localhost:3000/api/status | grep -o '\"success\":\\s*true' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  redis:
+    image: redis:7-alpine
+    container_name: new-api-redis
+    restart: always
+    # Keep the password identical to REDIS_CONN_STRING above.
+    command: ["redis-server", "--requirepass", "ChangeMe_RedisPass"]
+    networks:
+      - new-api-network
+    # Single-node without Redis: delete this service, the depends_on entry and
+    # the REDIS_CONN_STRING line above.
+
+networks:
+  new-api-network:
+    driver: bridge
