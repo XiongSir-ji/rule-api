@@ -86,7 +86,7 @@ docker-compose -f docker-compose.build.yml ps
 docker-compose -f docker-compose.build.yml logs -f new-api
 ```
 
-日志里出现类似 `New API listening on 0.0.0.0:3000` / 数据库迁移完成即可 `Ctrl+C` 退出日志跟随。
+日志里出现类似 `MAKNAA <version> started` / 数据库迁移完成即可 `Ctrl+C` 退出日志跟随。
 
 ### 3.3 访问
 

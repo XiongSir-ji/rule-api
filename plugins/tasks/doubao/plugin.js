@@ -336,7 +336,7 @@ function trimmed(value) {
   return String(value || "").trim();
 }
 
-// Another New API gateway serves the Ark wire format under /doubao, the form
+// Another MAKNAA gateway serves the Ark wire format under /doubao, the form
 // every gateway release serves; Ark itself serves the unprefixed paths.
 function apiRoot(ctx) {
   return ctx.baseUrl + (ctx.upstream && ctx.upstream.kind === "new_api" ? "/doubao" : "");

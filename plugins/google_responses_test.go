@@ -43,7 +43,7 @@ func TestGoogleResponsesProtocol(t *testing.T) {
 	})
 }
 
-// A New API channel reaches Veo through another gateway's /google routes. The
+// A MAKNAA channel reaches Veo through another gateway's /google routes. The
 // gateway rebuilds the request this driver sent, names the operation after its
 // own task so it is polled there, and serves the video file only its Gemini
 // key can read.

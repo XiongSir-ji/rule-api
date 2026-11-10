@@ -19,9 +19,9 @@ For commercial licensing, please contact support@quantumnous.com
 import { cn } from '@/lib/utils'
 
 interface SectionHeadingProps {
-  /** Uppercase eyebrow line above the title. Brand copy, not translated. */
+  /** Uppercase eyebrow line above the title. */
   subtitle: string
-  /** Section title. Brand copy, not translated. */
+  /** Section title. */
   title: string
   /** Optional supporting paragraph under the title. */
   description?: string

@@ -125,7 +125,7 @@ func TestDeepSeekToolsHelper(t *testing.T) {
 		{name: "fetch failure keeps its status", path: fetch, body: `{"url":"https://example.com/missing"}`,
 			response:    `{"error":{"message":"failed to fetch URL","type":"not_found_error","param":null,"code":"invalid_request_error"}}`,
 			channelType: constant.ChannelTypeDeepSeek, status: http.StatusNotFound},
-		{name: "search through a New API channel", path: search, body: `{"query":"deepseek"}`,
+		{name: "search through a MAKNAA channel", path: search, body: `{"query":"deepseek"}`,
 			response: results, channelType: constant.ChannelTypeNewAPI, status: http.StatusOK, settled: []int{375}},
 		{name: "channel without the endpoint", path: search, body: `{"query":"deepseek"}`, channelType: constant.ChannelTypeOpenAI},
 	}

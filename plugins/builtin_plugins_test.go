@@ -352,7 +352,7 @@ func TestBuiltInPluginsAddressNewAPIUpstreamOnNativeRoutes(t *testing.T) {
 		t.Run(tc.key, func(t *testing.T) {
 			plugin, found := generation.Get(tc.key)
 			require.True(t, found)
-			require.True(t, plugin.Meta.SupportsUpstream(jsplugin.UpstreamKindNewAPI), "%s must declare new_api to be bindable to a New API channel", tc.key)
+			require.True(t, plugin.Meta.SupportsUpstream(jsplugin.UpstreamKindNewAPI), "%s must declare new_api to be bindable to a MAKNAA channel", tc.key)
 			call := func(hook string, args ...any) map[string]any {
 				value, err := plugin.Engine.Call(t.Context(), hook, args...)
 				require.NoError(t, err, hook)

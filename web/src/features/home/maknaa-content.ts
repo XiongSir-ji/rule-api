@@ -19,14 +19,10 @@ For commercial licensing, please contact support@quantumnous.com
 /**
  * MAKNAA landing page copy.
  *
- * Everything here is brand/marketing content and is intentionally kept out of
- * the i18n catalog: the source site ships a single English edition, and the
- * navigation labels deliberately mirror the section headings they scroll to, so
- * translating one without the other would desynchronize the page.
- *
- * Interactive chrome — buttons, form labels, placeholders and status messages —
- * stays translatable and is written as literal `t('...')` calls in the
- * components instead.
+ * Every string here is rendered through `t()`, with the English value serving
+ * as the translation key, so switching languages updates the whole page.
+ * Brand identifiers, email addresses, phone numbers and GPU model names stay
+ * literal because they are not translatable.
  */
 
 export const MAKNAA_SITE = {

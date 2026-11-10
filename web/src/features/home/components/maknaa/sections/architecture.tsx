@@ -24,6 +24,7 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { AnimateInView } from '@/components/animate-in-view'
 import {
@@ -84,6 +85,7 @@ function TierConnector() {
 }
 
 export function MaknaaArchitecture() {
+  const { t } = useTranslation()
   // Single-open accordion, matching the source design: reopening the same tier
   // collapses it rather than leaving every tier expanded at once.
   const [expandedTier, setExpandedTier] = useState<number | null>(null)
@@ -103,9 +105,9 @@ export function MaknaaArchitecture() {
       <div className='relative'>
         <AnimateInView animation='fade-up'>
           <SectionHeading
-            subtitle={MAKNAA_ARCHITECTURE.subtitle}
-            title={MAKNAA_ARCHITECTURE.title}
-            description={MAKNAA_ARCHITECTURE.description}
+            subtitle={t(MAKNAA_ARCHITECTURE.subtitle)}
+            title={t(MAKNAA_ARCHITECTURE.title)}
+            description={t(MAKNAA_ARCHITECTURE.description)}
             className='mb-16'
           />
         </AnimateInView>
@@ -147,7 +149,7 @@ export function MaknaaArchitecture() {
                         </span>
                         <span>
                           <span className='text-mk-text-primary block text-lg font-semibold'>
-                            {tier.name}
+                            {t(tier.name)}
                           </span>
                           <span className='text-mk-text-muted block font-mono text-xs'>
                             {tier.nameEn}
@@ -163,7 +165,7 @@ export function MaknaaArchitecture() {
                     <CollapsibleContent className='CollapsibleContent'>
                       <div className='border-t border-white/5 px-6 pt-2 pb-6'>
                         <p className='text-mk-text-secondary mb-4 text-sm leading-relaxed'>
-                          {tier.details}
+                          {t(tier.details)}
                         </p>
                         <ul className='grid grid-cols-1 gap-2 sm:grid-cols-2'>
                           {tier.items.map((item) => (
@@ -177,7 +179,7 @@ export function MaknaaArchitecture() {
                                   gradient
                                 )}
                               />
-                              {item}
+                              {t(item)}
                             </li>
                           ))}
                         </ul>

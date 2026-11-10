@@ -307,8 +307,8 @@ export function MaknaaContact() {
     <SectionWrapper id={MAKNAA_SECTION_IDS.contact}>
       <AnimateInView animation='fade-up'>
         <SectionHeading
-          subtitle={MAKNAA_CONTACT.subtitle}
-          title={MAKNAA_CONTACT.title}
+          subtitle={t(MAKNAA_CONTACT.subtitle)}
+          title={t(MAKNAA_CONTACT.title)}
           className='mb-16'
         />
       </AnimateInView>
@@ -342,7 +342,7 @@ export function MaknaaContact() {
 
             <div className='mt-10 border-t border-white/5 pt-8'>
               <p className='text-mk-text-muted text-sm leading-relaxed'>
-                {MAKNAA_CONTACT.responseNote}
+                {t(MAKNAA_CONTACT.responseNote)}
               </p>
             </div>
           </div>

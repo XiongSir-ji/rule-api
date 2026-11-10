@@ -17,6 +17,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 For commercial licensing, please contact support@quantumnous.com
 */
 import { Brain, Cpu, Database, Zap, type LucideIcon } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 import { AnimateInView } from '@/components/animate-in-view'
 import {
@@ -36,12 +37,14 @@ const SERVICE_ICONS: Record<MaknaaServiceIcon, LucideIcon> = {
 }
 
 export function MaknaaServices() {
+  const { t } = useTranslation()
+
   return (
     <SectionWrapper id={MAKNAA_SECTION_IDS.services}>
       <AnimateInView animation='fade-up'>
         <SectionHeading
-          subtitle={MAKNAA_SERVICES.subtitle}
-          title={MAKNAA_SERVICES.title}
+          subtitle={t(MAKNAA_SERVICES.subtitle)}
+          title={t(MAKNAA_SERVICES.title)}
           className='mb-16'
         />
       </AnimateInView>
@@ -64,10 +67,10 @@ export function MaknaaServices() {
                   </div>
 
                   <h3 className='text-mk-text-primary mb-3 text-xl font-semibold'>
-                    {service.title}
+                    {t(service.title)}
                   </h3>
                   <p className='text-mk-text-secondary mb-6 text-sm leading-relaxed'>
-                    {service.description}
+                    {t(service.description)}
                   </p>
 
                   <ul className='space-y-2'>
@@ -77,7 +80,7 @@ export function MaknaaServices() {
                         className='text-mk-text-secondary flex items-center gap-2 text-sm'
                       >
                         <span className='bg-mk-cyan/60 size-1.5 shrink-0 rounded-full' />
-                        {feature}
+                        {t(feature)}
                       </li>
                     ))}
                   </ul>

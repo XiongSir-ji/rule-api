@@ -137,7 +137,7 @@ function plainObject(value) {
   return value && typeof value === "object" && !Array.isArray(value) ? value : null;
 }
 
-// Another New API gateway serves the xAI wire format under /xai, the form
+// Another MAKNAA gateway serves the xAI wire format under /xai, the form
 // every gateway release serves.
 function apiRoot(ctx) {
   return ctx.baseUrl + (ctx.upstream && ctx.upstream.kind === "new_api" ? "/xai" : "");

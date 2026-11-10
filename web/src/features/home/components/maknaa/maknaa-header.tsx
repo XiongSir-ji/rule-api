@@ -17,7 +17,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 For commercial licensing, please contact support@quantumnous.com
 */
 import { Link } from '@tanstack/react-router'
-import { Menu, X } from 'lucide-react'
+import { ArrowLeft, Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -110,6 +110,21 @@ export function MaknaaHeader() {
               ))}
 
               <div className='text-mk-text-secondary flex items-center gap-1'>
+                {isAuthenticated && (
+                  <Button
+                    size='sm'
+                    variant='ghost'
+                    className='text-mk-text-secondary hover:text-mk-cyan h-9 px-3 text-sm hover:bg-white/5'
+                    render={<Link to='/dashboard' />}
+                    aria-label={t('Back to Console')}
+                    title={t('Back to Console')}
+                  >
+                    <ArrowLeft className='size-4' />
+                    <span className='hidden xl:inline'>
+                      {t('Back to Console')}
+                    </span>
+                  </Button>
+                )}
                 <LanguageSwitcher />
                 {isAuthenticated ? (
                   <ProfileDropdown />
@@ -169,7 +184,17 @@ export function MaknaaHeader() {
                 {t(item.label)}
               </button>
             ))}
-            {!isAuthenticated && (
+            {isAuthenticated ? (
+              <Button
+                variant='ghost'
+                className='text-mk-text-secondary hover:text-mk-cyan justify-start gap-2 px-0 text-base hover:bg-white/5'
+                render={<Link to='/dashboard' />}
+                onClick={() => setMobileOpen(false)}
+              >
+                <ArrowLeft className='size-4' />
+                {t('Back to Console')}
+              </Button>
+            ) : (
               <Button
                 variant='ghost'
                 className='text-mk-text-secondary hover:text-mk-cyan justify-start px-0 text-base hover:bg-white/5'

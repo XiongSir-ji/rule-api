@@ -85,20 +85,20 @@ export function MaknaaHero() {
         <AnimateInView animation='fade-in' delay={150}>
           <h1 className='mb-4 text-5xl font-bold tracking-tight md:text-7xl lg:text-8xl'>
             <span className='from-mk-cyan via-mk-blue to-mk-purple bg-gradient-to-r bg-clip-text text-transparent'>
-              {MAKNAA_HERO.title}
+              {t(MAKNAA_HERO.title)}
             </span>
           </h1>
         </AnimateInView>
 
         <AnimateInView animation='fade-in' delay={300}>
           <p className='text-mk-text-primary mb-8 text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl'>
-            {MAKNAA_HERO.titleLine2}
+            {t(MAKNAA_HERO.titleLine2)}
           </p>
         </AnimateInView>
 
         <AnimateInView animation='fade-in' delay={450}>
           <p className='text-mk-text-secondary mx-auto mb-10 max-w-2xl text-lg leading-relaxed md:text-xl'>
-            {MAKNAA_HERO.subtitle}
+            {t(MAKNAA_HERO.subtitle)}
           </p>
         </AnimateInView>
 

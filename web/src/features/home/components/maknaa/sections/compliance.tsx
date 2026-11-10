@@ -17,6 +17,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 For commercial licensing, please contact support@quantumnous.com
 */
 import { Globe, Lock, Shield, type LucideIcon } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 import { AnimateInView } from '@/components/animate-in-view'
 import {
@@ -35,12 +36,14 @@ const COMPLIANCE_ICONS: Record<MaknaaComplianceIcon, LucideIcon> = {
 }
 
 export function MaknaaCompliance() {
+  const { t } = useTranslation()
+
   return (
     <SectionWrapper id={MAKNAA_SECTION_IDS.compliance} background='secondary'>
       <AnimateInView animation='fade-up'>
         <SectionHeading
-          subtitle={MAKNAA_COMPLIANCE.subtitle}
-          title={MAKNAA_COMPLIANCE.title}
+          subtitle={t(MAKNAA_COMPLIANCE.subtitle)}
+          title={t(MAKNAA_COMPLIANCE.title)}
           accent='emerald'
           className='mb-16'
         />
@@ -60,10 +63,10 @@ export function MaknaaCompliance() {
                   <Icon className='text-mk-emerald size-7' aria-hidden='true' />
                 </div>
                 <h3 className='text-mk-text-primary mb-3 text-lg font-semibold'>
-                  {item.title}
+                  {t(item.title)}
                 </h3>
                 <p className='text-mk-text-secondary text-sm leading-relaxed'>
-                  {item.description}
+                  {t(item.description)}
                 </p>
               </div>
             </AnimateInView>

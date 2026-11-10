@@ -16,6 +16,8 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 For commercial licensing, please contact support@quantumnous.com
 */
+import { useTranslation } from 'react-i18next'
+
 import { AnimateInView } from '@/components/animate-in-view'
 import {
   MAKNAA_ABOUT,
@@ -26,30 +28,32 @@ import { GlobeNodes } from '../globe-nodes'
 import { SectionWrapper } from '../section-wrapper'
 
 export function MaknaaAbout() {
+  const { t } = useTranslation()
+
   return (
     <SectionWrapper id={MAKNAA_SECTION_IDS.about} background='secondary'>
       <div className='grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16'>
         <div>
           <AnimateInView>
             <p className='text-mk-cyan mb-3 text-sm font-medium tracking-wider uppercase'>
-              {MAKNAA_ABOUT.subtitle}
+              {t(MAKNAA_ABOUT.subtitle)}
             </p>
             <h2 className='mb-6 text-3xl font-bold md:text-4xl'>
-              {MAKNAA_ABOUT.title}
+              {t(MAKNAA_ABOUT.title)}
             </h2>
           </AnimateInView>
 
           <AnimateInView delay={150}>
             <div className='text-mk-text-secondary space-y-4 leading-relaxed'>
               {MAKNAA_ABOUT.story.map((paragraph) => (
-                <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+                <p key={paragraph.slice(0, 48)}>{t(paragraph)}</p>
               ))}
             </div>
           </AnimateInView>
 
           <AnimateInView delay={300}>
             <p className='text-mk-text-secondary mt-6 leading-relaxed'>
-              {MAKNAA_ABOUT.vision}
+              {t(MAKNAA_ABOUT.vision)}
             </p>
           </AnimateInView>
         </div>
@@ -76,7 +80,7 @@ export function MaknaaAbout() {
                 {stat.suffix}
               </div>
               <div className='text-mk-text-secondary mt-2 text-sm'>
-                {stat.label}
+                {t(stat.label)}
               </div>
             </div>
           </AnimateInView>

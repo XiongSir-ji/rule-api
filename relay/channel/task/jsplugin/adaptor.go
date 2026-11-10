@@ -1479,7 +1479,7 @@ func (a *TaskAdaptor) channelSetting() kitdto.ChannelSettings {
 }
 
 // applyUpstreamCredentials sets ctx.upstream together with the credentials
-// every driver hook reads. A New API channel (type 60) is another gateway:
+// every driver hook reads. A MAKNAA channel (type 60) is another gateway:
 // the plugin must address its own prefixed native routes there, and the
 // channel key is that gateway's token, so it is sent as a Bearer header for
 // every auth type instead of running the plugin's vendor auth scheme.

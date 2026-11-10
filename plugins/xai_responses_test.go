@@ -162,7 +162,7 @@ func TestXAIModeratedVideoKeepsItsCharge(t *testing.T) {
 				return
 			}
 			// The native status route answers with xAI's own result, usage
-			// included, and a downstream New API gateway polling it settles
+			// included, and a downstream MAKNAA gateway polling it settles
 			// on the same facts.
 			var data any
 			require.NoError(t, common.UnmarshalJsonStr(tc.body, &data))

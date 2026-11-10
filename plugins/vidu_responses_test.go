@@ -61,7 +61,7 @@ func TestViduMetadataCannotChangeWhatIsBilled(t *testing.T) {
 	assert.Equal(t, float64(7), body["seed"])
 }
 
-// A New API channel reaches Vidu through another gateway's /vidu routes. The
+// A MAKNAA channel reaches Vidu through another gateway's /vidu routes. The
 // gateway rebuilds the request this driver sent, so Vidu receives one body and
 // both gateways bill the same facts, and the gateway's task reads back as the
 // same state and credits.

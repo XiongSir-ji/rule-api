@@ -185,7 +185,7 @@ function definedFields(source, keys) {
   return fields;
 }
 
-// On a New API channel the same plugin answers on another gateway, which
+// On a MAKNAA channel the same plugin answers on another gateway, which
 // serves the MiniMax wire format under /hailuo, the form every gateway release
 // serves.
 function viaGateway(ctx) {

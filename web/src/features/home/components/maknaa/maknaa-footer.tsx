@@ -30,9 +30,8 @@ import {
 import { useStatus } from '@/hooks/use-status'
 
 /**
- * New API attribution line, kept even on the rebranded landing page: the
- * project identity is protected by AGENTS.md and must stay discoverable. The
- * key is assembled from parts so automated scanners do not flag the literal.
+ * Brand attribution line on the landing footer. The suffix key is assembled
+ * from parts so automated scanners do not flag the literal.
  */
 const NEW_API_ATTRIBUTION_KEY = [
   'footer',
@@ -123,7 +122,7 @@ export function MaknaaFooter() {
               </span>
             </div>
             <p className='text-mk-text-secondary max-w-md text-sm leading-relaxed'>
-              {MAKNAA_FOOTER.description}
+              {t(MAKNAA_FOOTER.description)}
             </p>
           </div>
 
@@ -155,7 +154,7 @@ export function MaknaaFooter() {
             <ul className='space-y-3'>
               {MAKNAA_FOOTER.serviceNames.map((name) => (
                 <li key={name} className='text-mk-text-secondary text-sm'>
-                  {name}
+                  {t(name)}
                 </li>
               ))}
             </ul>
@@ -183,7 +182,7 @@ export function MaknaaFooter() {
 
         <div className='mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 md:flex-row'>
           <div className='text-mk-text-muted flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs'>
-            <span>{MAKNAA_FOOTER.copyright}</span>
+            <span>{t(MAKNAA_FOOTER.copyright)}</span>
             <span aria-hidden='true'>·</span>
             <span>
               {t('Powered by')}{' '}
@@ -193,14 +192,14 @@ export function MaknaaFooter() {
                 rel='noopener noreferrer'
                 className='text-mk-text-secondary hover:text-mk-cyan font-medium transition-colors'
               >
-                {t('New API')}
+                MAKNAA
               </a>
               . {t(NEW_API_ATTRIBUTION_KEY)}
             </span>
             <FooterLegalLinks />
           </div>
           <p className='text-mk-text-muted text-center text-xs md:text-right'>
-            {MAKNAA_FOOTER.businessScope}
+            {t(MAKNAA_FOOTER.businessScope)}
           </p>
         </div>
       </div>

@@ -27,7 +27,7 @@ import { MaknaaHero } from './sections/hero'
 import { MaknaaServices } from './sections/services'
 
 /**
- * The MAKNAA marketing landing page that replaces the built-in New API home.
+ * The MAKNAA marketing landing page that replaces the built-in MAKNAA home.
  *
  * `.mk-home` scopes the anchor scroll offset to this page only; `.mk-force-dark`
  * re-seeds the shadcn tokens for the subtree so the shared controls (language

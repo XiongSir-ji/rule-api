@@ -16,6 +16,8 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 For commercial licensing, please contact support@quantumnous.com
 */
+import { useTranslation } from 'react-i18next'
+
 import { AnimateInView } from '@/components/animate-in-view'
 import { MAKNAA_GPU, MAKNAA_SECTION_IDS } from '@/features/home/maknaa-content'
 import { cn } from '@/lib/utils'
@@ -31,13 +33,15 @@ const BADGE_CLASS = {
 } as const
 
 export function MaknaaGpu() {
+  const { t } = useTranslation()
+
   return (
     <SectionWrapper id={MAKNAA_SECTION_IDS.gpu}>
       <AnimateInView animation='fade-up'>
         <SectionHeading
-          subtitle={MAKNAA_GPU.subtitle}
-          title={MAKNAA_GPU.title}
-          description={MAKNAA_GPU.description}
+          subtitle={t(MAKNAA_GPU.subtitle)}
+          title={t(MAKNAA_GPU.title)}
+          description={t(MAKNAA_GPU.description)}
           className='mb-16'
         />
       </AnimateInView>
@@ -76,12 +80,12 @@ export function MaknaaGpu() {
                         BADGE_CLASS[card.badge]
                       )}
                     >
-                      {card.badge}
+                      {t(card.badge)}
                     </span>
                   )}
                 </div>
                 <div className='text-mk-text-muted mb-1 text-xs'>
-                  {card.category}
+                  {t(card.category)}
                 </div>
                 <div className='text-mk-text-secondary font-mono text-xs'>
                   {card.memory}

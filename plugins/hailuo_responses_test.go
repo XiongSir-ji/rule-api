@@ -442,7 +442,7 @@ func TestHailuoQueryRequestEndpointByModel(t *testing.T) {
 			want: "https://api.minimax.example/v2/query/video_generation/t1",
 		},
 		{
-			name: "a New API gateway serves H3 on the prefixed v2 route",
+			name: "a MAKNAA gateway serves H3 on the prefixed v2 route",
 			ctx:  map[string]any{"taskId": "t1", "upstreamModel": "MiniMax-H3", "upstream": map[string]any{"kind": "new_api"}},
 			want: "https://api.minimax.example/hailuo/v2/query/video_generation/t1",
 		},
@@ -685,7 +685,7 @@ func TestHailuoH3PassesOpenAIVideoDecode(t *testing.T) {
 	assert.Equal(t, float64(12), requestBody["duration"])
 }
 
-// A New API channel reaches this plugin on another gateway. The downstream
+// A MAKNAA channel reaches this plugin on another gateway. The downstream
 // driver addresses the gateway's /hailuo routes, whose decoders give the
 // gateway's driver the same request and whose presenters give the downstream
 // driver the same task state, so MiniMax receives one body and both gateways

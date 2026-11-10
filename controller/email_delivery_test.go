@@ -43,7 +43,7 @@ func configureEmailDelivery(t *testing.T, options map[string]string) {
 }
 
 func TestResendDeliversThroughSelectedProvider(t *testing.T) {
-	configureEmailDelivery(t, map[string]string{"EmailProvider": "resend", "ResendApiKey": "test-key", "ResendFrom": "New API <sender@example.com>"})
+	configureEmailDelivery(t, map[string]string{"EmailProvider": "resend", "ResendApiKey": "test-key", "ResendFrom": "MAKNAA <sender@example.com>"})
 	calls := 0
 	http.DefaultTransport = emailHTTPTransport(func(request *http.Request) (*http.Response, error) {
 		calls++
@@ -60,7 +60,7 @@ func TestResendDeliversThroughSelectedProvider(t *testing.T) {
 			HTML    string   `json:"html"`
 		}
 		require.NoError(t, common.DecodeJson(request.Body, &body))
-		assert.Equal(t, `"New API" <sender@example.com>`, body.From)
+		assert.Equal(t, `"MAKNAA" <sender@example.com>`, body.From)
 		assert.Equal(t, []string{"one@example.com", "two@example.com"}, body.To)
 		assert.Equal(t, "验证码", body.Subject)
 		assert.Equal(t, "<p>123456</p>", body.HTML)
@@ -205,7 +205,7 @@ func TestResendSettingsChangesKeepActiveDeliveryWorking(t *testing.T) {
 	}{
 		{"active sender the parser rejects", "resend", "ResendFrom", "notify..team@example.com", false},
 		{"active key cleared", "resend", "ResendApiKey", " ", false},
-		{"active sender renamed", "resend", "ResendFrom", `"New API" <notify@example.com>`, true},
+		{"active sender renamed", "resend", "ResendFrom", `"MAKNAA" <notify@example.com>`, true},
 		{"inactive sender saved before its key", "smtp", "ResendFrom", "notify@example.com", true},
 	}
 	for _, test := range tests {

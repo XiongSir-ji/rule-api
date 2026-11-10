@@ -205,7 +205,7 @@ func decodePluginValue(t *testing.T, value any) map[string]any {
 	return decoded
 }
 
-// A New API channel reaches Vertex AI through another gateway's /vertex-ai
+// A MAKNAA channel reaches Vertex AI through another gateway's /vertex-ai
 // route, which runs the request in the gateway's own project. Operation names
 // carry the caller's path and the gateway task id, never the gateway's project,
 // and fetchPredictOperation on such a name reads that gateway task.
@@ -384,7 +384,7 @@ func TestVertexAIOmniBuildSubmitRequest(t *testing.T) {
 	_, err = call(map[string]any{"upstreamModel": omni, "authHeader": "Bearer t", "auth": map[string]any{"authHeader": "Bearer t", "projectId": "p"}, "requestBody": map[string]any{"prompt": "x", "resolution": "2k"}})
 	assert.ErrorContains(t, err, "resolution must be one of 360p")
 	_, err = call(map[string]any{"upstreamModel": omni, "upstream": map[string]any{"kind": "new_api"}, "authHeader": "Bearer t", "auth": map[string]any{}, "requestBody": map[string]any{"prompt": "x"}})
-	assert.ErrorContains(t, err, "New API gateway")
+	assert.ErrorContains(t, err, "MAKNAA gateway")
 }
 
 func TestVertexAIOmniQueryAndParse(t *testing.T) {

@@ -426,7 +426,7 @@ function videoService(kind) {
   return kind === "frames" || kind === "speech" ? "image2video" : "video-generation";
 }
 
-// Another New API gateway serves the DashScope wire format under /ali, the
+// Another MAKNAA gateway serves the DashScope wire format under /ali, the
 // form every gateway release serves; DashScope itself serves the unprefixed
 // paths.
 function apiRoot(ctx) {
