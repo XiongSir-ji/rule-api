@@ -1,4 +1,4 @@
-# new-api（MAKNAA 主页）部署文档
+# MAKNAA 部署文档
 
 本文档说明如何在**全新服务器**上用 **docker-compose** 部署本项目。
 
