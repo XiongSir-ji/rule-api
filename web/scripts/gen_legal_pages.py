@@ -46,6 +46,8 @@ import sys
 import zipfile
 import xml.etree.ElementTree as ET
 
+from legal_shell import render_page as render_legal_page
+
 W = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 R = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}"
 
@@ -379,133 +381,6 @@ def body_html(blocks):
     return "\n".join(out)
 
 
-CSS = """
-:root{
-  --bg:#0a0a0f; --bg2:#12121a; --card:rgba(255,255,255,.03);
-  --cyan:#00f0ff; --blue:#3b82f6; --purple:#8b5cf6;
-  --t1:#f1f5f9; --t2:#94a3b8; --t3:#64748b;
-  --border:rgba(255,255,255,.10);
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{
-  margin:0; background:var(--bg); color:var(--t1);
-  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,
-    "Helvetica Neue","Noto Sans","PingFang SC","Microsoft YaHei",Arial,sans-serif;
-  font-size:16px; line-height:1.75;
-}
-a{color:var(--cyan); text-decoration:none}
-a:hover{text-decoration:underline}
-.hdr{
-  position:sticky; top:0; z-index:10;
-  background:rgba(10,10,15,.85); backdrop-filter:blur(20px);
-  border-bottom:1px solid rgba(255,255,255,.05);
-}
-.hdr-in{
-  max-width:60rem; margin:0 auto; padding:.875rem 1.5rem;
-  display:flex; align-items:center; justify-content:space-between; gap:1rem;
-}
-.brand{display:flex; align-items:center; gap:.5rem; color:var(--t1); font-weight:600}
-.brand img{width:32px; height:32px; border-radius:8px; object-fit:contain}
-.back{
-  color:var(--t2); font-size:.875rem; white-space:nowrap;
-  border:1px solid var(--border); border-radius:9999px; padding:.375rem .875rem;
-}
-.back:hover{color:var(--cyan); border-color:rgba(0,240,255,.3); text-decoration:none}
-main{max-width:60rem; margin:0 auto; padding:2.5rem 1.5rem 4rem}
-h1{
-  font-size:clamp(1.875rem,4vw,2.5rem); line-height:1.2; font-weight:700;
-  margin:0 0 1.25rem; letter-spacing:-.02em;
-  background:linear-gradient(90deg,var(--cyan),var(--blue),var(--purple));
-  -webkit-background-clip:text; background-clip:text; color:transparent;
-}
-h2{
-  font-size:1.25rem; font-weight:600; margin:2.25rem 0 .75rem;
-  padding-left:.75rem; border-left:3px solid var(--cyan); line-height:1.4;
-}
-p{margin:0 0 1rem; color:var(--t2)}
-strong{color:var(--t1); font-weight:600}
-p.meta{margin:0; padding:.3rem 0; color:var(--t2); font-size:.9375rem}
-p.meta .meta-k{
-  display:inline-block; min-width:13rem; color:var(--t3);
-  font-size:.8125rem; text-transform:uppercase; letter-spacing:.05em;
-}
-p.meta .meta-v{color:var(--t1)}
-.meta-sep{height:1px; background:var(--border); margin:1.25rem 0 1.75rem}
-ul{margin:0 0 1rem; padding-left:1.375rem; color:var(--t2)}
-ul.sub{margin:.5rem 0}
-li{margin-bottom:.5rem}
-li::marker{color:var(--cyan)}
-.tbl-wrap{overflow-x:auto; margin:0 0 1.25rem; border:1px solid var(--border); border-radius:.75rem}
-table{border-collapse:collapse; width:100%; font-size:.9375rem}
-th,td{padding:.625rem .875rem; text-align:left; border-bottom:1px solid var(--border); color:var(--t2); vertical-align:top}
-th{background:rgba(0,240,255,.06); color:var(--t1); font-weight:600; white-space:nowrap}
-tr:last-child td{border-bottom:none}
-.ftr{
-  border-top:1px solid rgba(255,255,255,.05); background:var(--bg2);
-  padding:1.5rem; text-align:center; color:var(--t3); font-size:.8125rem;
-}
-.ftr a{color:var(--t2)}
-.nav-other{
-  display:flex; flex-wrap:wrap; gap:.5rem; margin-top:2.5rem;
-  padding-top:1.5rem; border-top:1px solid var(--border);
-}
-.nav-other a{
-  font-size:.875rem; color:var(--t2); border:1px solid var(--border);
-  border-radius:9999px; padding:.375rem .875rem;
-}
-.nav-other a:hover{color:var(--cyan); border-color:rgba(0,240,255,.3); text-decoration:none}
-.nav-other a[aria-current="page"]{color:var(--bg); background:var(--cyan); border-color:var(--cyan); font-weight:600}
-@media (max-width:640px){
-  .hdr-in,main{padding-left:1rem; padding-right:1rem}
-  p.meta .meta-k{display:block; min-width:0; margin-bottom:.125rem}
-}
-@media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
-@media print{
-  body{background:#fff; color:#000}
-  .hdr,.ftr,.nav-other{display:none}
-  p,li,td{color:#000}
-  h1{color:#000; background:none; -webkit-background-clip:initial}
-  h2{border-left-color:#000}
-}
-"""
-
-
-TEMPLATE = """<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="index,follow">
-<title>{title} | MAKNAA</title>
-<meta name="description" content="{title} of Maknaa Group Sdn. Bhd.">
-<style>{css}</style>
-</head>
-<body>
-<header class="hdr">
-  <div class="hdr-in">
-    <a class="brand" href="/">
-      <img src="/maknaa/header-logo-32.png"
-           srcset="/maknaa/header-logo-32.png 32w, /maknaa/header-logo-48.png 48w, /maknaa/header-logo-64.png 64w"
-           sizes="32px" alt="MAKNAA" width="32" height="32">
-      <span>MAKNAA</span>
-    </a>
-    <a class="back" href="/">&larr; Back to home</a>
-  </div>
-</header>
-<main>
-{body}
-<nav class="nav-other" aria-label="Other policies">{nav}</nav>
-</main>
-<footer class="ftr">
-  <p>&copy; 2026 MAKNAA GROUP SDN. BHD. All Rights Reserved.</p>
-  <p>Powered by <a href="https://github.com/QuantumNous/new-api" target="_blank" rel="noopener noreferrer">MAKNAA</a>. All rights reserved. Designed and developed by the project contributors.</p>
-</footer>
-</body>
-</html>
-"""
-
-
 def slug_from_path(path):
     """Derive a page slug from a source filename like Data-Policy_EN_20261105.docx."""
     base = os.path.basename(path)
@@ -544,20 +419,45 @@ def resolve_sources(src_files, src_dir):
     return {slug: found[slug] for slug in TITLES if slug in found}
 
 
-def render_page(slug, src, slugs):
+# Source-document defects corrected on emission. Remove an entry once the
+# corresponding .docx has been fixed upstream.
+CONTENT_FIXUPS = (
+    ("[Company Name] Sdn. Bhd.", "Maknaa Group Sdn. Bhd."),
+    ("located in located in", "located in"),
+    ("Maknaa GroupSdn. Bhd.", "Maknaa Group Sdn. Bhd."),
+)
+
+
+ENGLISH_LABELS = {
+    "back": "Back to home",
+    "langLabel": "Language",
+    "otherPolicies": "Other policies",
+    "rights": "&copy; 2026 MAKNAA GROUP SDN. BHD. All Rights Reserved.",
+    "powered": (
+        'Powered by <a href="https://github.com/QuantumNous/new-api"'
+        ' target="_blank" rel="noopener noreferrer">MAKNAA</a>.'
+        " All rights reserved. Designed and developed by the project contributors."
+    ),
+}
+
+
+def render_page(slug, src):
     blocks = blocks_from_docx(src)
     inner = body_html(blocks)
+    for broken, fixed in CONTENT_FIXUPS:
+        inner = inner.replace(broken, fixed)
     # Insert a separator after the leading metadata run (before first h2).
     idx = inner.find("<h2>")
     if idx > 0:
         inner = inner[:idx] + '<div class="meta-sep"></div>\n' + inner[idx:]
-    nav = "\n".join(
-        '<a href="/legal/%s.html"%s>%s</a>'
-        % (s, ' aria-current="page"' if s == slug else "", html.escape(TITLES[s]))
-        for s in slugs
-    )
-    page = TEMPLATE.format(
-        title=html.escape(TITLES[slug]), css=CSS, body=inner, nav=nav
+    page = render_legal_page(
+        slug=slug,
+        lang="en",
+        title=TITLES[slug],
+        description="%s of Maknaa Group Sdn. Bhd." % TITLES[slug],
+        body=inner,
+        labels=ENGLISH_LABELS,
+        nav_titles=TITLES,
     )
     return page, inner, len(blocks)
 
@@ -610,7 +510,7 @@ def main(argv=None):
 
     for slug in slugs:
         src = sources[slug]
-        page, inner, block_count = render_page(slug, src, slugs)
+        page, inner, block_count = render_page(slug, src)
         out = os.path.join(args.out, slug + ".html")
         if not args.dry_run:
             with open(out, "w", encoding="utf-8", newline="\n") as f:

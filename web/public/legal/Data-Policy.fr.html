@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="fr" data-slug="Data-Policy" data-lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>Politique de données | MAKNAA</title>
+<meta name="description" content="Politique de données de Maknaa Group Sdn. Bhd.">
+<link rel="stylesheet" href="/legal/legal.css">
+<script src="/legal/legal.js"></script>
+</head>
+<body>
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="brand" href="/">
+      <img src="/maknaa/header-logo-32.png"
+           srcset="/maknaa/header-logo-32.png 32w, /maknaa/header-logo-48.png 48w, /maknaa/header-logo-64.png 64w"
+           sizes="32px" alt="MAKNAA" width="32" height="32">
+      <span>MAKNAA</span>
+    </a>
+    <div class="hdr-right">
+      <nav class="langs" aria-label="Langue">
+        <a href="/legal/Data-Policy.html?lang=en" data-lang="en">EN</a>
+        <a href="/legal/Data-Policy.zhCN.html?lang=zhCN" data-lang="zhCN">简体</a>
+        <a href="/legal/Data-Policy.zhTW.html?lang=zhTW" data-lang="zhTW">繁體</a>
+        <a href="/legal/Data-Policy.fr.html?lang=fr" data-lang="fr" aria-current="true">FR</a>
+        <a href="/legal/Data-Policy.ja.html?lang=ja" data-lang="ja">日本語</a>
+        <a href="/legal/Data-Policy.ru.html?lang=ru" data-lang="ru">RU</a>
+        <a href="/legal/Data-Policy.vi.html?lang=vi" data-lang="vi">VI</a>
+      </nav>
+      <a class="back" href="/">&larr; Retour à l&#x27;accueil</a>
+    </div>
+  </div>
+</header>
+<main>
+<h1><strong>Politique de données</strong></h1>
+<p class="meta"><span class="meta-k">Exploitant</span><span class="meta-v">Maknaa Group Sdn. Bhd.</span></p>
+<p class="meta"><span class="meta-k">Numéro d'enregistrement</span><span class="meta-v">202501037327 (1638737-V)</span></p>
+<p class="meta"><span class="meta-k">Lieu de constitution</span><span class="meta-v">Malaisie</span></p>
+<p class="meta"><span class="meta-k">Contact</span><span class="meta-v">azmel@maknaagroup.com</span></p>
+<p class="meta"><span class="meta-k">Dernière mise à jour</span><span class="meta-v">6 novembre 2026</span></p>
+<div class="meta-sep"></div>
+<p class="lang-note">Cette traduction est fournie à titre indicatif ; en cas d'ambiguïté, la version anglaise prévaut.</p>
+<h2><strong>1.  Champ d'application</strong></h2>
+<p>La présente Politique s'applique aux services d'inférence (le « Service ») fournis par Maknaa Group Sdn. Bhd. (« nous »). Elle couvre toutes les requêtes qui nous sont acheminées via la plateforme OpenRouter ainsi que les requêtes adressées directement à notre API.</p>
+<p>Elle ne s'applique pas à notre site web ni à notre page de statut, régis par notre Politique de confidentialité.</p>
+<h2><strong>2.  Synthèse des engagements</strong></h2>
+<div class="tbl-wrap"><table>
+<tr>
+<th><strong>Élément</strong></th>
+<th><strong>Engagement</strong></th>
+</tr>
+<tr>
+<td>Invites et sorties</td>
+<td>Non journalisées, non conservées</td>
+</tr>
+<tr>
+<td>Conservation du contenu</td>
+<td>Aucune — libéré de la mémoire dès la fin de la requête</td>
+</tr>
+<tr>
+<td>Utilisation pour l'entraînement</td>
+<td>Non</td>
+</tr>
+<tr>
+<td>Examen humain du contenu</td>
+<td>Aucun</td>
+</tr>
+<tr>
+<td>Métadonnées de mesure</td>
+<td>Conservées — périmètre et durées à la section 4</td>
+</tr>
+<tr>
+<td>Lieu de traitement</td>
+<td>Centre de données en Thaïlande (traitement à l'étranger, voir section 9)</td>
+</tr>
+<tr>
+<td>Base du transfert transfrontalier</td>
+<td>Art. 129(2)(b) de la PDPA, avec analyse d'impact du transfert</td>
+</tr>
+</table></div>
+<h2><strong>3.  Ce que nous ne collectons pas</strong></h2>
+<p>Le contenu suivant n'est jamais journalisé, écrit sur disque ni conservé sous une forme récupérable :</p>
+<ul>
+<li>le texte intégral des invites, y compris les messages système, les messages utilisateur, les arguments d'appel d'outils et les résultats d'outils ;</li>
+<li>la sortie intégrale du modèle, y compris les fragments diffusés en flux ;</li>
+<li>les images, sons, vidéos et fichiers transmis avec une requête, ainsi que leurs résultats d'analyse ;</li>
+<li>les copies brutes des charges utiles de requête et de réponse, ou les fragments de charge capturés dans des contextes d'erreur.</li>
+</ul>
+<p>Ce contenu n'existe qu'en mémoire pendant une requête unique et est libéré à son achèvement (y compris en cas d'arrêt du flux, d'expiration du délai ou d'interruption anormale), au plus tard sous 60 secondes. Les vidages mémoire (crash dumps) sont désactivés et la collecte du corps des requêtes dans nos outils de supervision et de traçage est désactivée.</p>
+<h2><strong>4.  Données que nous conservons</strong></h2>
+<div class="tbl-wrap"><table>
+<tr>
+<th><strong>Catégorie</strong></th>
+<th><strong>Champs</strong></th>
+<th><strong>Conservation</strong></th>
+<th><strong>Finalité</strong></th>
+</tr>
+<tr>
+<td>Facturation et usage</td>
+<td>ID de requête, horodatage, ID de modèle, nombre de tokens d'entrée/sortie, statut de la requête</td>
+<td>13 mois</td>
+<td>Facturation, rapprochement, litiges</td>
+</tr>
+<tr>
+<td>Journaux techniques</td>
+<td>ID de requête, point de terminaison, TTFT, latence totale, statut HTTP, région d'entrée, nœud amont</td>
+<td>90 jours</td>
+<td>Surveillance de la disponibilité, diagnostic d'incidents</td>
+</tr>
+<tr>
+<td>Prévention des abus</td>
+<td>ID de clé, débit de requêtes, simultanéité, adresse IP (intégrale pendant 30 jours, puis tronquée et hachée)</td>
+<td>90 jours</td>
+<td>Limitation de débit, détection d'abus et d'attaques</td>
+</tr>
+<tr>
+<td>Données agrégées</td>
+<td>Indicateurs n'identifiant aucune personne, directement ou indirectement</td>
+<td>Non applicable (anonymisées)</td>
+<td>Planification des capacités, reporting de service</td>
+</tr>
+</table></div>
+<p>Aucune de ces données ne contient d'invite ni de sortie. Les données sont supprimées ou anonymisées de façon irréversible à leur expiration, conformément au principe de conservation énoncé à la section 10 de la PDPA.</p>
+<h2><strong>5.  Finalités du traitement</strong></h2>
+<ul>
+<li>facturer les appelants ou les plateformes selon l'usage réel ;</li>
+<li>surveiller la disponibilité, diagnostiquer les incidents et optimiser les performances ;</li>
+<li>détecter et bloquer les abus, le trafic d'attaque et les usages anormaux ;</li>
+<li>respecter nos obligations légales, fiscales et d'audit.</li>
+</ul>
+<h2><strong>6.  Absence d'utilisation pour l'entraînement</strong></h2>
+<p>Nous n'utilisons pas les invites, les sorties ni les données utilisateur transmises via le Service pour l'entraînement, le réglage fin, la distillation, l'évaluation ou l'amélioration d'un modèle quelconque, et nous ne les fournissons pas à des tiers à ces fins. Tous les modèles sont déployés avec des poids figés ; aucun apprentissage en ligne n'a lieu.</p>
+<h2><strong>7.  Accès humain</strong></h2>
+<p>Aucun personnel n'est affecté à l'examen du contenu des requêtes. Comme nous ne conservons aucun contenu, il n'y a rien à examiner. L'activité de l'exploitant se limite aux métadonnées visées à la section 4, dans le cadre strict du traitement des incidents et de la gestion des capacités, elle est journalisée et soumise à autorisation.</p>
+<p>Nous ne détenons ni invite ni sortie, et il n'existe aucune copie de tels contenus susceptible d'être fournie à une autorité, une plateforme ou un tiers. Si une demande portant sur de tels contenus nous est adressée, notre réponse est que ces contenus n'existent pas.</p>
+<p>Les métadonnées que nous détenons (voir section 4) peuvent être communiquées dans le cadre d'une procédure légale : décision judiciaire en Malaisie ou en Thaïlande, obligation légale de production émanant d'une autorité compétente, ou autre procédure contraignante au titre du droit applicable. Pour les demandes manifestement trop larges, dépourvues de base légale ou entachées de vices de procédure, nous chercherons à en réduire la portée ou à formuler des objections, dans la mesure permise par la loi.</p>
+<p>Sauf interdiction expresse de divulgation par la loi ou décision judiciaire contraire, nous informerons les appelants concernés avant de fournir les données, en précisant la portée de la demande et sa base légale.</p>
+<h2><strong>8.  Sous-traitants</strong></h2>
+<p>Nous faisons actuellement appel aux sous-traitants suivants ; aucun n'a accès aux invites ni aux sorties :</p>
+<div class="tbl-wrap"><table>
+<tr>
+<th><strong>Sous-traitant</strong></th>
+<th><strong>Rôle</strong></th>
+<th><strong>Données concernées</strong></th>
+<th><strong>Localisation</strong></th>
+</tr>
+<tr>
+<td>DATAZONE CO.LTD.</td>
+<td>Infrastructure et capacité d'inférence</td>
+<td>Métadonnées (couche réseau)</td>
+<td>Thaïlande</td>
+</tr>
+</table></div>
+<p>En vertu de la section 9 de la PDPA, les sous-traitants sont directement soumis au principe de sécurité. Nous concluons des accords écrits exigeant une protection au moins aussi stricte que la présente Politique. Toute modification de cette liste est publiée ici avec un relevé des amendements.</p>
+<p>Les clients entreprises peuvent conclure avec nous un accord de traitement des données (DPA) distinct couvrant le périmètre et la durée du traitement, les mesures de sécurité, les délais de préavis en cas de changement de sous-traitant, les droits d'audit ainsi que la suppression ou la restitution des données. En cas de conflit entre un DPA et la présente Politique, le DPA prévaut.</p>
+<h2><strong>9.  Stockage et transfert transfrontalier</strong></h2>
+<p>Nous sommes établis en tant que responsable du traitement en Malaisie. L'ensemble de la capacité d'inférence se situe à SuperNap, Soi Hup Bon, Khao Khan Song, Si Racha, Chon Buri, 20110, Thaïlande, ce qui signifie que les données personnelles sont traitées hors de Malaisie.</p>
+<p>En vertu de la section 129(2) de la PDPA, les données personnelles peuvent être transférées hors de Malaisie lorsque le pays de destination dispose d'une loi substantiellement similaire à la Loi ou assure un niveau de protection au moins équivalent. Le responsable du traitement effectue cette évaluation lui-même, conformément aux Lignes directrices du Commissaire relatives aux transferts transfrontaliers de données personnelles (n° 3/2025, publiées le 29 avril 2025).</p>
+<p>Notre approche :</p>
+<ul>
+<li>une analyse d'impact du transfert (TIA) a été réalisée pour la Thaïlande et conclut que la protection n'est pas inférieure à celle exigée par la PDPA, sur le fondement de la section 129(2)(b) ;</li>
+<li>cette analyse est valable trois ans et est renouvelée à son expiration ou en cas de modification substantielle du droit du pays de destination ;</li>
+<li>des mesures complémentaires s'appliquent : chiffrement en transit, contrôle des accès, minimisation des données et absence de conservation du contenu ;</li>
+<li>des accords écrits avec les sous-traitants étrangers précisent leurs obligations de sécurité au titre de la section 9 de la PDPA ;</li>
+<li>pour les personnes concernées dans l'Union européenne, tout transfert de l'UE vers la Malaisie ou la Thaïlande repose sur les clauses contractuelles types de la Commission européenne (décision 2021/914), assorties d'une analyse d'impact du transfert.</li>
+</ul>
+<h2><strong>10.  Mesures de sécurité</strong></h2>
+<div class="tbl-wrap"><table>
+<tr>
+<th><strong>Couche</strong></th>
+<th><strong>Mesure</strong></th>
+</tr>
+<tr>
+<td>Transit</td>
+<td>TLS 1.2 ou supérieur de bout en bout, chiffrements faibles désactivés</td>
+</tr>
+<tr>
+<td>Repos</td>
+<td>Métadonnées chiffrées au repos ; clés gérées séparément et renouvelées</td>
+</tr>
+<tr>
+<td>Contrôle des accès</td>
+<td>Moindre privilège fondé sur les rôles, MFA, révocation immédiate au départ</td>
+</tr>
+<tr>
+<td>Isolation</td>
+<td>Requêtes des locataires isolées en mémoire ; tampons jamais réutilisés entre requêtes</td>
+</tr>
+<tr>
+<td>Journalisation</td>
+<td>Métadonnées uniquement ; tout accès aux métadonnées est journalisé</td>
+</tr>
+<tr>
+<td>Exercices</td>
+<td>Exercices de reprise et de réponse aux incidents au moins annuels</td>
+</tr>
+</table></div>
+<h2><strong>11.  Prévention des abus</strong></h2>
+<p>Comme nous ne conservons aucun contenu, la prévention des abus repose sur les métadonnées et des signaux comportementaux : débit de requêtes, simultanéité, usage par clé, profils IP, distribution de la longueur des requêtes et taux d'erreur. Nous n'effectuons pas d'examen ni de filtrage systématique du contenu, mais nous nous réservons le droit d'appliquer des limitations de débit, de suspendre des clés ou de résilier le Service lorsque nous recevons un signalement crédible, une notification de la plateforme ou une obligation légale d'agir.</p>
+<p>En cas d'anomalie détectée, nous appliquons des limitations de débit, réduisons les quotas ou suspendons les clés, et informons la plateforme et l'appelant lorsque cela est nécessaire.</p>
+<h2><strong>12.  Délégué à la protection des données</strong></h2>
+<p>Conformément à la section 12A de la PDPA et aux critères de mise en œuvre du Commissaire, nous avons désigné un délégué à la protection des données et en avons informé le Commissaire. Contact :</p>
+<ul>
+<li>Nom / fonction : NUR AZMEL BIN AWALUDIN, délégué à la protection des données</li>
+<li>E-mail : azmel@maknaagroup.com</li>
+<li>Adresse postale : Maknaa Group, Level 33A, MOF Inc. Tower, No. 9, Jalan Persiaran KLCC, 50088 Kuala Lumpur</li>
+</ul>
+<nav class="nav-other" aria-label="Autres politiques"><a href="/legal/Data-Policy.fr.html?lang=fr" aria-current="page">Politique de données</a>
+<a href="/legal/Privacy-Policy.fr.html?lang=fr">Politique de confidentialité</a>
+<a href="/legal/Terms-of-Service.fr.html?lang=fr">Conditions d&#x27;utilisation</a></nav>
+</main>
+<footer class="ftr">
+  <p>© 2026 MAKNAA GROUP SDN. BHD. Tous droits réservés.</p>
+  <p>Propulsé par <a href="https://github.com/QuantumNous/new-api" target="_blank" rel="noopener noreferrer">MAKNAA</a>. Tous droits réservés. Conçu et développé par les contributeurs du projet.</p>
+</footer>
+</body>
+</html>

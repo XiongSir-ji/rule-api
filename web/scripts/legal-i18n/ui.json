@@ -1,0 +1,146 @@
+{
+  "zhCN": {
+    "htmlLang": "zh-CN",
+    "back": "返回首页",
+    "langLabel": "语言",
+    "otherPolicies": "其他政策",
+    "rights": "© 2026 MAKNAA GROUP SDN. BHD. 保留所有权利。",
+    "powered": "由 <a href=\"https://github.com/QuantumNous/new-api\" target=\"_blank\" rel=\"noopener noreferrer\">MAKNAA</a> 提供技术支持。保留所有权利。由项目贡献者设计与开发。",
+    "note": "本页为译文，仅供参考；如与英文版本存在歧义，以英文版本为准。",
+    "descriptionTemplate": "Maknaa Group Sdn. Bhd. 的{title}",
+    "titles": {
+      "Data-Policy": "数据政策",
+      "Privacy-Policy": "隐私政策",
+      "Terms-of-Service": "服务条款"
+    },
+    "meta": {
+      "operator": "运营方",
+      "registration": "公司注册号",
+      "incorporation": "注册地",
+      "contact": "联系方式",
+      "updated": "最后更新",
+      "date": "2026年11月6日",
+      "place": "马来西亚"
+    }
+  },
+  "zhTW": {
+    "htmlLang": "zh-TW",
+    "back": "返回首頁",
+    "langLabel": "語言",
+    "otherPolicies": "其他政策",
+    "rights": "© 2026 MAKNAA GROUP SDN. BHD. 保留所有權利。",
+    "powered": "由 <a href=\"https://github.com/QuantumNous/new-api\" target=\"_blank\" rel=\"noopener noreferrer\">MAKNAA</a> 提供技術支援。保留所有權利。由專案貢獻者設計與開發。",
+    "note": "本頁為譯文，僅供參考；如與英文版本有歧義，以英文版本為準。",
+    "descriptionTemplate": "Maknaa Group Sdn. Bhd. 的{title}",
+    "titles": {
+      "Data-Policy": "資料政策",
+      "Privacy-Policy": "隱私政策",
+      "Terms-of-Service": "服務條款"
+    },
+    "meta": {
+      "operator": "營運方",
+      "registration": "公司註冊號",
+      "incorporation": "註冊地",
+      "contact": "聯絡方式",
+      "updated": "最後更新",
+      "date": "2026年11月6日",
+      "place": "馬來西亞"
+    }
+  },
+  "fr": {
+    "htmlLang": "fr",
+    "back": "Retour à l'accueil",
+    "langLabel": "Langue",
+    "otherPolicies": "Autres politiques",
+    "rights": "© 2026 MAKNAA GROUP SDN. BHD. Tous droits réservés.",
+    "powered": "Propulsé par <a href=\"https://github.com/QuantumNous/new-api\" target=\"_blank\" rel=\"noopener noreferrer\">MAKNAA</a>. Tous droits réservés. Conçu et développé par les contributeurs du projet.",
+    "note": "Cette traduction est fournie à titre indicatif ; en cas d'ambiguïté, la version anglaise prévaut.",
+    "descriptionTemplate": "{title} de Maknaa Group Sdn. Bhd.",
+    "titles": {
+      "Data-Policy": "Politique de données",
+      "Privacy-Policy": "Politique de confidentialité",
+      "Terms-of-Service": "Conditions d'utilisation"
+    },
+    "meta": {
+      "operator": "Exploitant",
+      "registration": "Numéro d'enregistrement",
+      "incorporation": "Lieu de constitution",
+      "contact": "Contact",
+      "updated": "Dernière mise à jour",
+      "date": "6 novembre 2026",
+      "place": "Malaisie"
+    }
+  },
+  "ja": {
+    "htmlLang": "ja",
+    "back": "ホームに戻る",
+    "langLabel": "言語",
+    "otherPolicies": "その他のポリシー",
+    "rights": "© 2026 MAKNAA GROUP SDN. BHD. 無断複写・転載を禁じます。",
+    "powered": "<a href=\"https://github.com/QuantumNous/new-api\" target=\"_blank\" rel=\"noopener noreferrer\">MAKNAA</a> によって提供されています。無断複写・転載を禁じます。プロジェクトのコントリビューターが設計・開発しました。",
+    "note": "本訳は参考用です。英文と相違がある場合は英文が優先します。",
+    "descriptionTemplate": "Maknaa Group Sdn. Bhd. の{title}",
+    "titles": {
+      "Data-Policy": "データポリシー",
+      "Privacy-Policy": "プライバシーポリシー",
+      "Terms-of-Service": "利用規約"
+    },
+    "meta": {
+      "operator": "運営者",
+      "registration": "会社登録番号",
+      "incorporation": "設立地",
+      "contact": "連絡先",
+      "updated": "最終更新日",
+      "date": "2026年11月6日",
+      "place": "マレーシア"
+    }
+  },
+  "ru": {
+    "htmlLang": "ru",
+    "back": "На главную",
+    "langLabel": "Язык",
+    "otherPolicies": "Другие политики",
+    "rights": "© 2026 MAKNAA GROUP SDN. BHD. Все права защищены.",
+    "powered": "Работает на <a href=\"https://github.com/QuantumNous/new-api\" target=\"_blank\" rel=\"noopener noreferrer\">MAKNAA</a>. Все права защищены. Дизайн и разработка — участники проекта.",
+    "note": "Настоящий перевод предоставлен для удобства; при расхождениях преимущественную силу имеет английская версия.",
+    "descriptionTemplate": "{title} от Maknaa Group Sdn. Bhd.",
+    "titles": {
+      "Data-Policy": "Политика в отношении данных",
+      "Privacy-Policy": "Политика конфиденциальности",
+      "Terms-of-Service": "Условия обслуживания"
+    },
+    "meta": {
+      "operator": "Оператор",
+      "registration": "Регистрационный номер",
+      "incorporation": "Место учреждения",
+      "contact": "Контакты",
+      "updated": "Последнее обновление",
+      "date": "6 ноября 2026 г.",
+      "place": "Малайзия"
+    }
+  },
+  "vi": {
+    "htmlLang": "vi",
+    "back": "Về trang chủ",
+    "langLabel": "Ngôn ngữ",
+    "otherPolicies": "Chính sách khác",
+    "rights": "© 2026 MAKNAA GROUP SDN. BHD. Bảo lưu mọi quyền.",
+    "powered": "Vận hành trên nền tảng <a href=\"https://github.com/QuantumNous/new-api\" target=\"_blank\" rel=\"noopener noreferrer\">MAKNAA</a>. Bảo lưu mọi quyền. Được thiết kế và phát triển bởi những người đóng góp cho dự án.",
+    "note": "Bản dịch này chỉ nhằm mục đích tham khảo; nếu có khác biệt, bản tiếng Anh sẽ được ưu tiên áp dụng.",
+    "descriptionTemplate": "{title} của Maknaa Group Sdn. Bhd.",
+    "titles": {
+      "Data-Policy": "Chính sách dữ liệu",
+      "Privacy-Policy": "Chính sách quyền riêng tư",
+      "Terms-of-Service": "Điều khoản dịch vụ"
+    },
+    "meta": {
+      "operator": "Đơn vị vận hành",
+      "registration": "Mã số đăng ký doanh nghiệp",
+      "incorporation": "Nơi thành lập",
+      "contact": "Liên hệ",
+      "updated": "Cập nhật lần cuối",
+      "date": "Ngày 6 tháng 11 năm 2026",
+      "place": "Malaysia"
+    }
+  }
+}

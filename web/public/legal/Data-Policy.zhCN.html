@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="zh-CN" data-slug="Data-Policy" data-lang="zhCN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>数据政策 | MAKNAA</title>
+<meta name="description" content="Maknaa Group Sdn. Bhd. 的数据政策">
+<link rel="stylesheet" href="/legal/legal.css">
+<script src="/legal/legal.js"></script>
+</head>
+<body>
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="brand" href="/">
+      <img src="/maknaa/header-logo-32.png"
+           srcset="/maknaa/header-logo-32.png 32w, /maknaa/header-logo-48.png 48w, /maknaa/header-logo-64.png 64w"
+           sizes="32px" alt="MAKNAA" width="32" height="32">
+      <span>MAKNAA</span>
+    </a>
+    <div class="hdr-right">
+      <nav class="langs" aria-label="语言">
+        <a href="/legal/Data-Policy.html?lang=en" data-lang="en">EN</a>
+        <a href="/legal/Data-Policy.zhCN.html?lang=zhCN" data-lang="zhCN" aria-current="true">简体</a>
+        <a href="/legal/Data-Policy.zhTW.html?lang=zhTW" data-lang="zhTW">繁體</a>
+        <a href="/legal/Data-Policy.fr.html?lang=fr" data-lang="fr">FR</a>
+        <a href="/legal/Data-Policy.ja.html?lang=ja" data-lang="ja">日本語</a>
+        <a href="/legal/Data-Policy.ru.html?lang=ru" data-lang="ru">RU</a>
+        <a href="/legal/Data-Policy.vi.html?lang=vi" data-lang="vi">VI</a>
+      </nav>
+      <a class="back" href="/">&larr; 返回首页</a>
+    </div>
+  </div>
+</header>
+<main>
+<h1><strong>数据政策</strong></h1>
+<p class="meta"><span class="meta-k">运营方</span><span class="meta-v">Maknaa Group Sdn. Bhd.</span></p>
+<p class="meta"><span class="meta-k">公司注册号</span><span class="meta-v">202501037327 (1638737-V)</span></p>
+<p class="meta"><span class="meta-k">注册地</span><span class="meta-v">马来西亚</span></p>
+<p class="meta"><span class="meta-k">联系方式</span><span class="meta-v">azmel@maknaagroup.com</span></p>
+<p class="meta"><span class="meta-k">最后更新</span><span class="meta-v">2026年11月6日</span></p>
+<div class="meta-sep"></div>
+<p class="lang-note">本页为译文，仅供参考；如与英文版本存在歧义，以英文版本为准。</p>
+<h2><strong>1.  适用范围</strong></h2>
+<p>本政策适用于 Maknaa Group Sdn. Bhd.（“我们”）提供的推理服务（“本服务”）。它涵盖通过 OpenRouter 平台路由至我们的全部请求，以及直接发往我们 API 的请求。</p>
+<p>本政策不适用于我们的网站或状态页面，后者受我们的隐私政策约束。</p>
+<h2><strong>2.  承诺概要</strong></h2>
+<div class="tbl-wrap"><table>
+<tr>
+<th><strong>事项</strong></th>
+<th><strong>承诺</strong></th>
+</tr>
+<tr>
+<td>提示词与输出</td>
+<td>不记录、不持久化</td>
+</tr>
+<tr>
+<td>内容留存</td>
+<td>零留存——请求完成后即从内存释放</td>
+</tr>
+<tr>
+<td>用于训练</td>
+<td>否</td>
+</tr>
+<tr>
+<td>人工审阅内容</td>
+<td>无</td>
+</tr>
+<tr>
+<td>计量元数据</td>
+<td>留存——范围与期限见第 4 节</td>
+</tr>
+<tr>
+<td>处理地点</td>
+<td>泰国数据中心（境外处理，见第 9 节）</td>
+</tr>
+<tr>
+<td>跨境依据</td>
+<td>《个人数据保护法》第 129(2)(b) 条，并附传输影响评估</td>
+</tr>
+</table></div>
+<h2><strong>3.  我们不收集的内容</strong></h2>
+<p>以下内容绝不会被记录、写入磁盘或以任何可恢复的形式留存：</p>
+<ul>
+<li>完整的提示词文本，包括系统消息、用户消息、工具调用参数和工具结果；</li>
+<li>完整的模型输出，包括流式分块；</li>
+<li>随请求上传的图像、音频、视频、文件及其解析结果；</li>
+<li>请求与响应负载的原始副本，或在错误上下文中截获的负载片段。</li>
+</ul>
+<p>此类内容仅在单次请求期间存在于内存中，并在请求完成（包括流终止、超时或异常中断）后释放，最迟不超过 60 秒。崩溃转储已禁用，监控与追踪工具中的请求正文采集也已关闭。</p>
+<h2><strong>4.  我们留存的数据</strong></h2>
+<div class="tbl-wrap"><table>
+<tr>
+<th><strong>类别</strong></th>
+<th><strong>字段</strong></th>
+<th><strong>留存期限</strong></th>
+<th><strong>用途</strong></th>
+</tr>
+<tr>
+<td>计费与用量</td>
+<td>请求 ID、时间戳、模型 ID、输入/输出 token 数、请求状态</td>
+<td>13 个月</td>
+<td>计费、对账、争议处理</td>
+</tr>
+<tr>
+<td>技术日志</td>
+<td>请求 ID、端点、首 token 时延（TTFT）、总时延、HTTP 状态、入口区域、上游节点</td>
+<td>90 天</td>
+<td>可用性监控、故障诊断</td>
+</tr>
+<tr>
+<td>防滥用</td>
+<td>密钥 ID、请求速率、并发数、IP 地址（前 30 天完整保存，之后截断并哈希）</td>
+<td>90 天</td>
+<td>限流、滥用与攻击检测</td>
+</tr>
+<tr>
+<td>聚合数据</td>
+<td>无法直接或间接识别任何个人的指标</td>
+<td>不适用（已匿名化）</td>
+<td>容量规划、服务报表</td>
+</tr>
+</table></div>
+<p>上述任何数据均不包含提示词或输出内容。数据到期后将予以删除或不可逆地匿名化，符合《个人数据保护法》第 10 条规定的留存原则。</p>
+<h2><strong>5.  处理目的</strong></h2>
+<ul>
+<li>根据实际用量向调用方或平台计费；</li>
+<li>监控可用性、诊断故障、优化性能；</li>
+<li>检测并阻断滥用、攻击流量和异常使用；</li>
+<li>履行法律、税务和审计义务。</li>
+</ul>
+<h2><strong>6.  不用于训练</strong></h2>
+<p>我们不会将通过本服务传输的提示词、输出或用户数据用于任何模型的训练、微调、蒸馏、评估或改进，也不会为此目的提供给任何第三方。所有模型均以固定权重部署，不存在在线学习。</p>
+<h2><strong>7.  人工访问</strong></h2>
+<p>我们没有安排人员审阅请求内容。由于我们不保留任何内容，因此没有可审阅的对象。运营人员的操作仅限于第 4 节所述元数据，且限于故障处理与容量管理，全程记录并须经授权。</p>
+<p>我们不持有提示词或输出内容，也不存在可提供给任何主管机关、平台或第三方的此类内容副本。如收到提供此类内容的请求，我们的答复是该内容并不存在。</p>
+<p>我们确实持有的元数据（见第 4 节）可依法律程序提供：马来西亚或泰国的法院命令、主管机关依法提出的调取要求，或适用法律下的其他强制程序。对于明显过于宽泛、缺乏法律依据或程序存在瑕疵的请求，我们将在法律允许的范围内寻求缩小范围或提出异议。</p>
+<p>除非法律明确禁止披露或法院另有裁定，我们将在提供数据前通知受影响的调用方，说明请求范围及其法律依据。</p>
+<h2><strong>8.  次级处理者</strong></h2>
+<p>我们目前使用以下次级处理者；任何一方均无权访问提示词或输出内容：</p>
+<div class="tbl-wrap"><table>
+<tr>
+<th><strong>次级处理者</strong></th>
+<th><strong>角色</strong></th>
+<th><strong>涉及数据</strong></th>
+<th><strong>所在地</strong></th>
+</tr>
+<tr>
+<td>DATAZONE CO.LTD.</td>
+<td>基础设施与推理算力</td>
+<td>元数据（网络层）</td>
+<td>泰国</td>
+</tr>
+</table></div>
+<p>根据《个人数据保护法》第 9 条，处理者直接受安全原则约束。我们签订书面协议，要求其提供不低于本政策的保护水平。本名单如有变更，将连同修订记录在此公布。</p>
+<p>企业客户可与我们另行签订数据处理协议（DPA），就处理范围与期限、安全措施、次级处理者变更的通知期、审计权以及数据删除或返还作出约定。若 DPA 与本政策冲突，以 DPA 为准。</p>
+<h2><strong>9.  存储与跨境传输</strong></h2>
+<p>我们作为数据控制者设立于马来西亚。全部推理算力位于泰国春武里府是拉差县 Khao Khan Song 区 Soi Hup Bon 的 SuperNap 数据中心（邮编 20110），即个人数据在马来西亚境外处理。</p>
+<p>根据《个人数据保护法》第 129(2) 条，如目的地具有与该法实质性相似的法律，或确保至少同等的保护水平，个人数据可转移至马来西亚境外。控制者依据专员发布的《跨境个人数据传输指南》（第 3/2025 号，2025 年 4 月 29 日发布）自行作出该项评估。</p>
+<p>我们的做法：</p>
+<ul>
+<li>已完成针对泰国的传输影响评估（TIA），结论是依据第 129(2)(b) 条，其保护水平不低于《个人数据保护法》的要求；</li>
+<li>该评估有效期为三年，到期或目的地法律发生重大变化时重新开展；</li>
+<li>采取补充措施：传输加密、访问控制、数据最小化以及不留存内容；</li>
+<li>与境外处理者签订书面协议，明确其依《个人数据保护法》第 9 条承担的安全义务；</li>
+<li>对于欧盟数据主体，从欧盟向马来西亚或泰国的任何传输均依据欧盟委员会标准合同条款（第 2021/914 号决定）并附传输影响评估。</li>
+</ul>
+<h2><strong>10.  安全措施</strong></h2>
+<div class="tbl-wrap"><table>
+<tr>
+<th><strong>层面</strong></th>
+<th><strong>措施</strong></th>
+</tr>
+<tr>
+<td>传输</td>
+<td>端到端 TLS 1.2 及以上，禁用弱加密套件</td>
+</tr>
+<tr>
+<td>静态存储</td>
+<td>元数据静态加密；密钥独立管理并定期轮换</td>
+</tr>
+<tr>
+<td>访问控制</td>
+<td>基于角色的最小权限、多因素认证、离职即时撤销权限</td>
+</tr>
+<tr>
+<td>隔离</td>
+<td>租户请求在内存中相互隔离；缓冲区不在请求间复用</td>
+</tr>
+<tr>
+<td>日志</td>
+<td>仅记录元数据；对元数据的所有访问均记录日志</td>
+</tr>
+<tr>
+<td>演练</td>
+<td>每年至少进行一次恢复与事件响应演练</td>
+</tr>
+</table></div>
+<h2><strong>11.  滥用防范</strong></h2>
+<p>由于我们不保留任何内容，滥用防范依赖元数据和行为信号：请求速率、并发数、按密钥的使用量、IP 画像、请求长度分布和错误率。我们不进行日常内容审阅或过滤，但保留在收到可信举报、平台通知或法律要求时实施限流、暂停密钥或终止服务的权利。</p>
+<p>发现异常时，我们会实施限流、降低配额或暂停密钥，并在必要时通知平台和调用方。</p>
+<h2><strong>12.  数据保护官</strong></h2>
+<p>根据《个人数据保护法》第 12A 条及专员的实施标准，我们已任命数据保护官，并已向专员通报该项任命。联系方式：</p>
+<ul>
+<li>姓名 / 职务：NUR AZMEL BIN AWALUDIN，数据保护官</li>
+<li>电子邮箱：azmel@maknaagroup.com</li>
+<li>邮寄地址：Maknaa Group, Level 33A, MOF Inc. Tower, No. 9, Jalan Persiaran KLCC, 50088 Kuala Lumpur</li>
+</ul>
+<nav class="nav-other" aria-label="其他政策"><a href="/legal/Data-Policy.zhCN.html?lang=zhCN" aria-current="page">数据政策</a>
+<a href="/legal/Privacy-Policy.zhCN.html?lang=zhCN">隐私政策</a>
+<a href="/legal/Terms-of-Service.zhCN.html?lang=zhCN">服务条款</a></nav>
+</main>
+<footer class="ftr">
+  <p>© 2026 MAKNAA GROUP SDN. BHD. 保留所有权利。</p>
+  <p>由 <a href="https://github.com/QuantumNous/new-api" target="_blank" rel="noopener noreferrer">MAKNAA</a> 提供技术支持。保留所有权利。由项目贡献者设计与开发。</p>
+</footer>
+</body>
+</html>

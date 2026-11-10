@@ -101,7 +101,8 @@ const LEGAL_PAGES = [
 ] as const
 
 export function MaknaaFooter() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const legalLang = i18n.language || 'en'
 
   return (
     <footer className='bg-mk-bg-secondary border-t border-white/5'>
@@ -169,7 +170,7 @@ export function MaknaaFooter() {
               {LEGAL_PAGES.map((page) => (
                 <li key={page.key}>
                   <a
-                    href={page.href}
+                    href={`${page.href}?lang=${legalLang}`}
                     className='text-mk-text-secondary hover:text-mk-cyan text-sm transition-colors'
                   >
                     {t(page.label)}
